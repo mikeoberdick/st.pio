@@ -13,7 +13,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 <?php if ( is_active_sidebar( 'footer_1') || is_active_sidebar( 'footer_2') || is_active_sidebar( 'footer_3') || is_active_sidebar( 'footer_4') ) { ?>
 
-<div class="wrapper" id="wrapper-footer">
+<div class="wrapper" id="wrapper-footer NEW_TEST">
 
 	<div class="<?php echo esc_html( $container ); ?>">
 
