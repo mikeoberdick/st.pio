@@ -30,7 +30,17 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
 				<?php while ( have_posts() ) : the_post(); ?>
 
-					<?php get_template_part( 'loop-templates/content', 'page' ); ?>
+					<?php
+
+					if( is_page( 'homepage' ) ) {
+      					get_template_part( 'template-parts/content', 'home' );
+    				}
+
+					else {
+					   get_template_part( 'loop-templates/content', 'page' );
+					}
+
+					?>
 
 					<?php
 					// If comments are open or we have at least one comment, load up the comment template.
@@ -57,5 +67,7 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 </div><!-- Container end -->
 
 </div><!-- Wrapper end -->
+
+<div id="js-heightControl" style="height: 0;">&nbsp;</div>
 
 <?php get_footer(); ?>

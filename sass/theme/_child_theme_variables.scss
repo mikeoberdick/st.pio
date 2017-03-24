@@ -8,16 +8,16 @@
 //Colors
 
 $brand-primary:         #fece00; //Brand Primary Color
-$brand-secondary;		#000000; //Brand Secondary Color
-$brand-tertiary;		#ff0000; //Brand Tertiary Color
+$brand-secondary:		#000000; //Brand Secondary Color
+$brand-tertiary:		#ff0000; //Brand Tertiary Color
 
 //Mix-Ins
 
 //Drop Shadow
 @mixin shadow {
-  -webkit-box-shadow: 0 8px 6px -6px black;
-	-moz-box-shadow: 0 8px 6px -6px black;
-	box-shadow: 0 8px 6px -6px black;
+  -webkit-box-shadow: 0 8px 6px -6px rgba(0,0,0,.3);
+	-moz-box-shadow: 0 8px 6px -6px rgba(0,0,0,.3);
+	box-shadow: 0 8px 6px -6px rgba(0,0,0,.3);
 }
 
 //Border Radius

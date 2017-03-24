@@ -13,20 +13,12 @@ Template:    Understrap
 /*------------------------------------------------*/
 
 h1, h2, h3, h4, h5 {
-	
+	color: $brand-primary;
 }
 
 body {
 	color: #b2b2b2;
 	font-family: 'open-sans', sans-serif;
-}
-
-.mb {
-	margin-bottom: 10vh;
-}
-
-.pb {
-	padding-bottom: 5vh;
 }
 
 /*------------------------------------------------*/
@@ -39,7 +31,9 @@ body {
 /*--------------------[HEADER]--------------------*/
 /*------------------------------------------------*/
 
-
+#navbarNavDropdown {
+	justify-content: flex-end;
+}
 
 /*------------------------------------------------*/
 /*-------------------[MENU]-----------------------*/
@@ -94,6 +88,21 @@ body {
 					text-decoration: none;
 				}
 			}
+		}
+	}
+}
+
+#bottomFooter {
+	background-color: $brand-primary;
+	color: #fff;
+	padding-top: 25px;
+	padding-bottom: 25px;
+
+	a {
+		color: #fff;
+
+		&:hover {
+			text-decoration: none;
 		}
 	}
 }
