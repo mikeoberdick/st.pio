@@ -70,12 +70,6 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 <?php wp_footer(); ?>
 
-<script>
-jQuery('button').on('click', function(){
-  jQuery('body').toggleClass('open');
-});
-</script>
-
 </body>
 
 </html>
