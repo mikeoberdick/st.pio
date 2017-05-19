@@ -51,6 +51,30 @@ body {
 
 
 /*------------------------------------------------*/
+/*--------------------[FORMS]-------------------*/
+/*------------------------------------------------*/
+.nf-form-content input[type="submit"],
+.nf-form-content input[type="button"],
+.nf-form-content button {
+			font-family: $body-font;
+			text-transform: uppercase;
+		    color: #fff !important;
+		    background-color: $brand-primary !important;
+		    border-color: $brand-primary !important;
+		    @include border-radius(5px);
+
+		    &:hover {
+		    	background-color: #002132 !important;
+		    	border-color: #001a28 !important;
+			}
+}
+
+.progress-bar {
+	background-color: $brand-primary;
+}
+
+
+/*------------------------------------------------*/
 /*---------------------[FOOTER]-------------------*/
 /*------------------------------------------------*/
 
