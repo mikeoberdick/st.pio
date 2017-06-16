@@ -47,7 +47,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 		<?php endif; ?>
 
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-					<span><i class="fa fa-bars" aria-hidden="true"></i> Menu</span>
+					<span class = "mobileToggle"><i class="fa fa-bars" aria-hidden="true"></i> Menu</span>
 				</button>
 
 					<!-- Your site title as branding in the menu -->
