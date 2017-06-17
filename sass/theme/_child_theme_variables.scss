@@ -14,6 +14,39 @@ $brand-tertiary:		#ff0000; //Brand Tertiary Color
 $body-font:             'Open Sans', sans-serif; //Open Sans
 $header-font:           'Open Sans', sans-serif; //Open Sans
 
+// Body Font Size
+$min_width: 320px;  //Minimum Width for font calculation
+$max_width: 1200px; //Maximum Width for font calculation
+$min_font: 16px; //Minimum font size
+$max_font: 24px;  //Maximum font size
+
+// Header Font Size
+
+// Fluid Typography Function
+
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
+  $u1: unit($min-vw);
+  $u2: unit($max-vw);
+  $u3: unit($min-font-size);
+  $u4: unit($max-font-size);
+
+  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+    & {
+      font-size: $min-font-size;
+      @media screen and (min-width: $min-vw) {
+        font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+      }
+      @media screen and (min-width: $max-vw) {
+        font-size: $max-font-size;
+      }
+    }
+  }
+}
+
 //Mix-Ins
 
 //Text Shadow
