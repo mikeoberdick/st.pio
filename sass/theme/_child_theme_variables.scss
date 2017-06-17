@@ -16,11 +16,16 @@ $header-font:           'open-sans', sans-serif; //Open Sans
 
 //Mix-Ins
 
+//Text Shadow
+@mixin text-shadow {
+    text-shadow: 0 0 15px #000;
+}
+
 //Drop Shadow
 @mixin shadow {
   -webkit-box-shadow: 0 8px 6px -6px rgba(0,0,0,.3);
-	-moz-box-shadow: 0 8px 6px -6px rgba(0,0,0,.3);
-	box-shadow: 0 8px 6px -6px rgba(0,0,0,.3);
+    -moz-box-shadow: 0 8px 6px -6px rgba(0,0,0,.3);
+      box-shadow: 0 8px 6px -6px rgba(0,0,0,.3);
 }
 
 //Border Radius
