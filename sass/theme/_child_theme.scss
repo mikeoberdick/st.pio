@@ -9,7 +9,7 @@ Template:    Understrap
 */
 
 /*------------------------------------------------*/
-/*--------------------[FONTS]---------------------*/
+/*-------------------[FONTS]----------------------*/
 /*------------------------------------------------*/
 
 html {
@@ -21,16 +21,23 @@ h1, h2, h3, h4, h5 {
 	font-family: $header-font;
 }
 
+h1 {  
+  font-size: $mod_1*$mod_1*$mod_1*$mod_1 *1rem; 
+  @include fluid-type($min_width, $max_width, $mod_1*$mod_1*$mod_1 *$min_font, $mod_2*$mod_2*$mod_2 *$min_font);
+}
+h2 {  
+  font-size: $mod_1*$mod_1*$mod_1 *1rem; 
+  @include fluid-type($min_width, $max_width, $mod_1*$mod_1*$mod_1 *$min_font, $mod_2*$mod_2*$mod_2 *$min_font);
+}
+h3 { 
+  font-size: $mod_1*$mod_1 *1rem;
+  @include fluid-type($min_width, $max_width, $mod_1*$mod_1 *$min_font, $mod_2*$mod_2 *$min_font);
+}
+
 body {
 	color: #b2b2b2;
 	font-family: $body-font;
 }
-
-/*------------------------------------------------*/
-/*---------------[MAIN LAYOUT INFO]---------------*/
-/*------------------------------------------------*/
-
-
 
 /*------------------------------------------------*/
 /*--------------------[HEADER]--------------------*/
