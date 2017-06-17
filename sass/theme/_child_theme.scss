@@ -9,16 +9,21 @@ Template:    Understrap
 */
 
 /*------------------------------------------------*/
-/*-----------------[BASIC STYLES]-----------------*/
+/*--------------------[FONTS]---------------------*/
 /*------------------------------------------------*/
+
+html {
+  @include fluid-type($min_width, $max_width, $min_font, $max_font);
+}
 
 h1, h2, h3, h4, h5 {
 	color: $brand-primary;
+	font-family: $header-font;
 }
 
 body {
 	color: #b2b2b2;
-	font-family: 'open-sans', sans-serif;
+	font-family: $body-font;
 }
 
 /*------------------------------------------------*/
