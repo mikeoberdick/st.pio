@@ -11,6 +11,8 @@ $the_theme = wp_get_theme();
 $container = get_theme_mod( 'understrap_container_type' );
 ?>
 
+<div id="js-heightControl" style="height: 0;">&nbsp;</div>
+
 <?php if ( is_active_sidebar( 'footer_1') || is_active_sidebar( 'footer_2') || is_active_sidebar( 'footer_3') || is_active_sidebar( 'footer_4') ) { ?>
 
 <div class="wrapper" id="wrapper-footer">
