@@ -21,6 +21,11 @@ require get_stylesheet_directory() . '/inc/dashboard.php';
 require get_stylesheet_directory() . '/inc/acf.php';
 
 /**
+ * Theme Menus & Custom Functionality
+ */
+require get_stylesheet_directory() . '/inc/menus.php';
+
+/**
  * Advanced Custom Fields
  */
 require get_stylesheet_directory() . '/inc/woocommerce.php';
