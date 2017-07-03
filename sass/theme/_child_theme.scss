@@ -40,6 +40,30 @@ body {
 }
 
 /*------------------------------------------------*/
+/*--------------------[LINKS]---------------------*/
+/*------------------------------------------------*/
+
+/*------------------------------------------------*/
+/*-------------------[BUTTONS]--------------------*/
+/*------------------------------------------------*/
+
+.btn-primary {
+	font-family: $body-font;
+	text-transform: uppercase;
+	color: #fff !important;
+	background-color: $brand-primary !important;
+	border-color: $brand-primary !important;
+	@include border-radius(5px);
+}
+			
+.btn-primary {
+	&:hover {
+		background-color: lighten( $brand-primary, 10% ) !important;
+		border-color: $brand-primary !important;
+   	}
+  }
+
+/*------------------------------------------------*/
 /*--------------------[HEADER]--------------------*/
 /*------------------------------------------------*/
 
@@ -68,24 +92,45 @@ body {
 /*------------------------------------------------*/
 /*--------------------[FORMS]-------------------*/
 /*------------------------------------------------*/
-.nf-form-content input[type="submit"],
-.nf-form-content input[type="button"],
-.nf-form-content button {
-			font-family: $body-font;
-			text-transform: uppercase;
-		    color: #fff !important;
-		    background-color: $brand-primary !important;
-		    border-color: $brand-primary !important;
-		    @include border-radius(5px);
 
-		    &:hover {
-		    	background-color: #002132 !important;
-		    	border-color: #001a28 !important;
-			}
-}
+#PAGE_NAME {
+	.nf-form-fields-required {
+		display: none;
+	}
 
-.progress-bar {
-	background-color: $brand-primary;
+	.fName {
+		float: left;
+		width: 48%;
+		margin-right: 2%;
+		clear: none;
+
+		@include media-breakpoint-down(md) { float: none; width: 100%; margin-right: 0; clear: both; }
+	}
+
+	.lName {
+		float: left;
+		width: 48%;
+		clear: none;
+
+		@include media-breakpoint-down(md) { float: none; width: 100%; clear: both; }
+	}
+
+	::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+	  font-family: $header-font;
+	  font-size: 12px;
+	}
+	::-moz-placeholder { /* Firefox 19+ */
+	  font-family: $header-font;
+	  font-size: 12px;
+	}
+	:-ms-input-placeholder { /* IE 10+ */
+	 font-family: $header-font;
+	 font-size: 12px;
+	}
+	:-moz-placeholder { /* Firefox 18- */
+	  font-family: $header-font;
+	  font-size: 12px;
+	}
 }
 
 
