@@ -48,7 +48,9 @@ $container = get_theme_mod( 'understrap_container_type' );
 					<span class = "mobileToggle"><i class="fa fa-bars" aria-hidden="true"></i> Menu</span>
 				</button>
 					
-					<a rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name') ); ?>"><img id = "headerLogo" src = "<?php the_field('logo', 'option'); ?>"></a>
+				<a rel = "home" class="navbar-brand" data-itemprop="url" title="<?php echo esc_attr( get_bloginfo( 'name') ); ?>" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+					<img id = "headerLogo" src = "<?php the_field('company_logo', 'option'); ?>" alt = "Designs 4 The Web">
+				</a>
 
 				<!-- The WordPress Menu goes here -->
 				<?php wp_nav_menu(
