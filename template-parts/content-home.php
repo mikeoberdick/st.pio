@@ -1,4 +1,5 @@
-<div class="container-fluid heroSection" id="content" tabindex="-1" style = "background-image: url('<?php the_field('hero_image'); ?>')">
+<?php $image = get_field('hero_image'); ?>
+<div class="container-fluid heroSection" tabindex="-1" style = "background-image: url('<?php echo $image['url']; ?>')">
 	<div class = "row opacityLayer">
 		<div class = "container">
 			<div class = "row">
