@@ -17,14 +17,17 @@ if( function_exists('acf_add_options_page') ) {
 }
 
 //Register the Google Maps API for use with ACF
-function google_maps_scripts() {
-		wp_enqueue_script( 'google-map', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCxL_4g2Eo8oafO2EVNKa6q8AOKL0U8mxE', array(), '3', true );
-		wp_enqueue_script( 'google-map-init', get_stylesheet_directory_uri() . '/js/google-maps.js', array('google-map', 'jquery'), '0.1', true );
+function google_maps_scripts () {
+	if (is_page('contact')) {
+	   		wp_enqueue_script( 'google-map', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyB_LlgIpFpelPIbA25yjUi_dhCywFKKYco', array(), '3', true );
+			wp_enqueue_script( 'google-map-init', get_template_directory_uri() . '/library/js/google-maps.js', array('google-map', 'jquery'), '0.1', true );
+		}
 	}
+	
 add_action( 'wp_enqueue_scripts', 'google_maps_scripts' );
 
 function my_acf_google_map_api( $api ){
-	$api['key'] = 'AIzaSyCxL_4g2Eo8oafO2EVNKa6q8AOKL0U8mxE';
+	$api['key'] = 'AIzaSyB_LlgIpFpelPIbA25yjUi_dhCywFKKYco';
 	return $api;	
 }
 
