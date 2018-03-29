@@ -5,7 +5,7 @@ Basic Child Theme for UnderStrap Theme Framework: https://github.com/holger1411/
 It shares with the parent theme all PHP files and adds its own functions.php on top of the UnderStrap parent themes functions.php.
 
 IT DID NOT LOAD THE PARENT THEMES CSS FILE(S)!
-Instead it uses the UnderStrap Parent Theme as dependency via Bower and compiles its own CSS file from it.
+Instead it uses the UnderStrap Parent Theme as dependency via npm and compiles its own CSS file from it.
 
 Uses the Enqueue method the load and sort the CSS file the right way instead of the old @import method.
 
@@ -41,7 +41,7 @@ So you have one clean CSS file at the end and just one request.
 ## Developing With NPM, Gulp, SASS and Browser Sync
 
 ### Installing Dependencies
-- Make sure you have installed Node.js, Bower, and Browser-Sync [1] on your computer globally
+- Make sure you have installed Node.js, Gulp, and Browser-Sync [1] on your computer globally
 - Then open your terminal and browse to the location of your UnderStrap copy
 - Run: `$ npm install` then: `$ gulp copy-assets`
 
@@ -52,13 +52,14 @@ To work and compile your Sass files on the fly start:
 
 Or, to run with Browser-Sync:
 
-- First change the browser-sync options to reflect your environment in the file `/gulpfile.js` in the beginning of the file:
+- First change the browser-sync options to reflect your environment in the file `/gulpconfig.json` in the beginning of the file:
 ```javascript
-var browserSyncOptions = {
-    proxy: "localhost/theme_test/", // <----- CHANGE HERE
-    notify: false
+  "browserSyncOptions" : {
+    "proxy": "localhost/wordpress/",
+    "notify": false
+  }
 };
 ```
 - then run: `$ gulp watch-bs`
 
-[1] Visit [http://browsersync.io](http://browsersync.io) for more information on Browser Sync
+[1] Visit [https://browsersync.io/](https://browsersync.io/) for more information on Browser Sync
