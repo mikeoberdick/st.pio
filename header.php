@@ -24,7 +24,12 @@ $container = get_theme_mod( 'understrap_container_type' );
 	<link rel="icon" type="image/png" sizes="32x32" href="<?php echo get_stylesheet_directory_uri() . '/favicons/favicon-32x32.png';?>">
 	<link rel="icon" type="image/png" sizes="16x16" href="<?php echo get_stylesheet_directory_uri() . '/favicons/favicon-16x16.png';?>">
 	<link rel="manifest" href="<?php echo get_stylesheet_directory_uri() . '/favicons/manifest.json';?>">
-	<link rel="mask-icon" href="<?php echo get_stylesheet_directory_uri() . '/favicons/safari-pinned-tab.svg';?>" color="#5bbad5">
+	<link rel="mask-icon" href="<?php echo get_stylesheet_directory_uri() . '/favicons/safari-pinned-tab.svg';?>" color="#334396">
+	<meta name="apple-mobile-web-app-title" content="Silver Mill Tours">
+	<meta name="application-name" content="Silver Mill Tours">
+	<meta name="msapplication-TileColor" content="#2d89ef">
+	<meta name="theme-color" content="#ffffff">
+
 	<?php wp_head(); ?>
 	
 </head>
@@ -38,6 +43,12 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 		<a class="skip-link screen-reader-text sr-only" href="#content"><?php esc_html_e( 'Skip to content', 'understrap' ); ?></a>
 
+		<div class="container-fluid" id = "utilityBar">
+			<div class="container">
+				<p>UTILITY HEADER</p>
+			</div><!-- .container -->
+		</div><!-- .container-fluid -->
+
 		<nav class="navbar navbar-expand-md">
 
 			<div class="container">
@@ -47,7 +58,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 				</button>
 					
 				<a rel = "home" class="navbar-brand" data-itemprop="url" title="<?php echo esc_attr( get_bloginfo( 'name') ); ?>" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-					<img id = "headerLogo" src = "<?php the_field('company_logo', 'option'); ?>" alt = "Designs 4 The Web">
+					<img id = "headerLogo" src = "<?php the_field('company_logo', 'option'); ?>" alt = "<?php echo esc_attr( get_bloginfo( 'name') ); ?>">
 				</a>
 
 				<!-- The WordPress Menu goes here -->
