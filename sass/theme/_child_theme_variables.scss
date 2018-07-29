@@ -6,15 +6,16 @@
 // Just add your color code here, compile the theme.scss file to change this color everywhere
 
 //Colors
-
 $brand-primary:         #f58634; // Orange
-$brand-secondary:		#000000; // Brand Secondary Color
-$brand-tertiary:		#ff0000; // Brand Tertiary Color
+$brand-secondary:	#000000; // Brand Secondary Color
+$brand-tertiary:	#ff0000; // Brand Tertiary Color
+$body-font-color:	#333;
 
-$header-font:           'nunito', sans-serif; // Nunito
-
-$body-font:             'Open Sans', sans-serif; // Open Sans
-$body-font-color:   #808080; // Grey
+//Fonts
+$header-font:       'Fjalla One', sans-serif;
+$body-font:         'Open Sans', sans-serif;
+$nav-font:          'Roboto', sans-serif;
+$body-font:         'Open Sans', sans-serif;
 
 //Fluid Typography Variables
 $min_width: 320px;
