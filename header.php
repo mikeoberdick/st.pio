@@ -43,12 +43,6 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 		<a class="skip-link screen-reader-text sr-only" href="#content"><?php esc_html_e( 'Skip to content', 'understrap' ); ?></a>
 
-		<div class="container-fluid" id = "utilityBar">
-			<div class="container">
-				<p>UTILITY HEADER</p>
-			</div><!-- .container -->
-		</div><!-- .container-fluid -->
-
 		<nav class="navbar navbar-expand-md">
 
 			<div class="container">
