@@ -44,9 +44,6 @@ add_filter('widget_text', 'do_shortcode');
 
 function d4tw_enqueue_styles () {
     wp_enqueue_style( 'Open Sans', 'https://fonts.googleapis.com/css?family=Open+Sans' );
-    wp_enqueue_style( 'Fjalla One', 'https://fonts.googleapis.com/css?family=Fjalla+One' );
-    wp_enqueue_style( 'Roboto', 'https://fonts.googleapis.com/css?family=Roboto' );
-    
     wp_enqueue_style( 'AOS CSS', get_stylesheet_directory_uri() . '/aos/aos.css' );
 }
 add_action('wp_enqueue_scripts', 'd4tw_enqueue_styles');
