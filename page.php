@@ -21,7 +21,7 @@ get_header();
 
 			<?php
 
-			if( is_page( 'homepage' ) ) {
+			if( is_page( 'home' ) ) {
 					get_template_part( 'template-parts/content', 'home' );
 			}
 

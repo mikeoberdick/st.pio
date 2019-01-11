@@ -3,9 +3,16 @@ jQuery(document).ready(function() {
 	jQuery('#js-heightControl').css('height', jQuery(window).height() - jQuery('html').height() +'px');
 });
 
-//Dropdown on hover
-jQuery('ul.navbar-nav li.dropdown').hover(function() {
-	jQuery(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
-}, function() {
-	jQuery(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
+//Homepage Slider
+
+jQuery(document).ready(function(){
+  	jQuery('#homepageSlider').slick({
+    autoplay: true,
+ 	autoplaySpeed: 5000,
+  	infinite: true,
+  	speed: 500,
+  	fade: true,
+  	cssEase: 'linear',
+    arrows: false,
+  });
 });

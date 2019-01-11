@@ -45,14 +45,14 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 		<nav class="navbar navbar-expand-md">
 
-			<div class="container">
+			<div class="container-fluid">
 
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
 					<span class = "mobileToggle"><i class="fa fa-bars" aria-hidden="true"></i> Menu</span>
 				</button>
 					
 				<a rel = "home" class="navbar-brand" data-itemprop="url" title="<?php echo esc_attr( get_bloginfo( 'name') ); ?>" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-					<img id = "headerLogo" src = "<?php the_field('company_logo', 'option'); ?>" alt = "<?php echo esc_attr( get_bloginfo( 'name') ); ?>">
+					<h3 id = "headerLogo" alt = "<?php echo esc_attr( get_bloginfo( 'name') ); ?>"><?php echo esc_attr( get_bloginfo( 'name') ); ?></h3>
 				</a>
 
 				<!-- The WordPress Menu goes here -->
@@ -67,9 +67,10 @@ $container = get_theme_mod( 'understrap_container_type' );
 						'walker'          => new understrap_WP_Bootstrap_Navwalker(),
 					)
 				); ?>
-
+				<div id="nav-buttons">
+					<a href = "/bulletin"><button role = 'button' class = 'btn'><i class="fa fa-newspaper-o" aria-hidden="true"></i> Bulletin</button></a>
+					<a href = '#'><button role = 'button' class = 'btn'><i class="fa fa-heart" aria-hidden="true"></i> Give</button></a>	
+				</div><!-- #nav-buttons -->
 			</div><!-- .container -->
-
 		</nav><!-- .site-navigation -->
-
 	</div><!-- .wrapper-navbar end -->

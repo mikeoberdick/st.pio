@@ -36,15 +36,17 @@ add_action( 'after_setup_theme', 'add_child_theme_textdomain' );
 // Shortcodes in text widgets
 add_filter('widget_text', 'do_shortcode');
 
+//Setup Custom Thumbnail Size for slider
 
-
+add_image_size( 'hp-slider', 1920, 600, array( 'center', 'center' ) );
 
 
 // *** Theme Styles *** \\
 
 function d4tw_enqueue_styles () {
-    wp_enqueue_style( 'Open Sans', 'https://fonts.googleapis.com/css?family=Open+Sans' );
-    wp_enqueue_style( 'AOS CSS', get_stylesheet_directory_uri() . '/aos/aos.css' );
+    wp_enqueue_style( 'Google Fonts', 'https://fonts.googleapis.com/css?family=Open+Sans|Pathway+Gothic+One|Roboto+Condensed' );
+    wp_enqueue_style( 'Slick CSS', '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css' );
+    wp_enqueue_style( 'Slick Theme CSS', get_stylesheet_directory_uri() . '/slick/slick-theme.css' );
 }
 add_action('wp_enqueue_scripts', 'd4tw_enqueue_styles');
 
@@ -56,7 +58,7 @@ add_action('wp_enqueue_scripts', 'd4tw_enqueue_styles');
 
 function d4tw_enqueue_scripts () {
    wp_enqueue_script( 'D4TW Theme JS', get_stylesheet_directory_uri() . '/js/d4tw.js', array('jquery'), '1.0.0', true );
-   wp_enqueue_script( 'AOS JS', get_stylesheet_directory_uri() . '/aos/aos.js', array('jquery'), '1.0.0', true );
+   wp_enqueue_script( 'Slick JS', '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', array('jquery'), '1.0.0', true );
 }
 add_action( 'wp_enqueue_scripts', 'd4tw_enqueue_scripts' );
 
@@ -260,8 +262,49 @@ function d4tw_sidebars() {
 }
 add_action( 'widgets_init', 'd4tw_sidebars' );
 
+// *** CUSTOM POST TYPES *** \\
 
-
-
-
-// *** WooCommerce *** \\
+//Products custom post type
+add_action( 'init', 'homily_post_type', 0 );
+function homily_post_type() {
+// Set UI labels for Custom Post Type
+  $labels = array(
+    'name'                => 'Homilies',
+    'singular_name'       => 'Homily',
+    'menu_name'           => 'Homilies',
+    'parent_item_colon'   => 'Parent Homily',
+    'all_items'           => 'All Homilies',
+    'view_item'           => 'View Homily',
+    'add_new_item'        => 'Add New Homily',
+    'add_new'             => 'Add New',
+    'edit_item'           => 'Edit Homily',
+    'update_item'         => 'Update Homily',
+    'search_items'        => 'Search Homilies',
+    'not_found'           => 'No Homily Found',
+    'not_found_in_trash'  => 'No Homily Found in Trash',
+  );
+  
+// Set other options for Custom Post Type
+  $args = array(
+    'label'               => 'Homily',
+    'description'         => 'Homily',
+    'labels'              => $labels,
+    // Features this CPT supports in Post Editor
+    'supports'            => array( 'title', 'editor', 'page-attributes', 'thumbnail' ),
+    'hierarchical'        => false,
+    'public'              => true,
+    'show_ui'             => true,
+    'show_in_menu'        => true,
+    'show_in_nav_menus'   => true,
+    'show_in_admin_bar'   => true,
+    'menu_position'       => 5,
+    'can_export'          => true,
+    'has_archive'         => true,
+    'exclude_from_search' => false,
+    'publicly_queryable'  => true,
+    'capability_type'     => 'page',
+  );
+  
+  // Registering your Custom Post Type
+  register_post_type( 'Homilies', $args );
+}
