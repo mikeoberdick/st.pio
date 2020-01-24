@@ -43,9 +43,9 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 		<a class="skip-link screen-reader-text sr-only" href="#content"><?php esc_html_e( 'Skip to content', 'understrap' ); ?></a>
 
-		<nav class="navbar navbar-expand-md">
+		<nav class="navbar navbar-expand-lg">
 
-			<div class="container-fluid">
+			<div class="container">
 
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
 					<span class = "mobileToggle"><i class="fa fa-bars" aria-hidden="true"></i> Menu</span>
@@ -68,9 +68,15 @@ $container = get_theme_mod( 'understrap_container_type' );
 					)
 				); ?>
 				<div id="nav-buttons">
-					<a href = "/bulletin"><button role = 'button' class = 'btn'><i class="fa fa-newspaper-o" aria-hidden="true"></i> Bulletin</button></a>
-					<a href = '#'><button role = 'button' class = 'btn'><i class="fa fa-heart" aria-hidden="true"></i> Give</button></a>	
+					<a href = "/the-weekly-bulletin/ " class = "mr-3"><button role = 'button' class = 'btn btn-primary'><i class="fa fa-thumb-tack rotate-45 mr-1" aria-hidden="true"></i> WEEKLY BULLETIN</button></a>
+					<a target = "_blank" href = 'https://pompeiichurch.churchgiving.com/'><button role = 'button' class = 'btn btn-primary'><i class="fa fa-heart mr-1" aria-hidden="true"></i> GIVE</button></a>	
 				</div><!-- #nav-buttons -->
 			</div><!-- .container -->
 		</nav><!-- .site-navigation -->
 	</div><!-- .wrapper-navbar end -->
+
+	<?php //if(!is_page('homepage')) { ?>
+		<!-- <header class="page-header container-fluid"> -->
+			<?php //the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+		<!-- </header>-->
+	<?php //} ?>

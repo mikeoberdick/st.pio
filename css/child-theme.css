@@ -10793,8 +10793,8 @@ html {
     html {
       font-size: 18px; } }
 
-h1, h2, h3, h4, h5 {
-  color: #005B90;
+h1, h2, h3, h4, h5, h6 {
+  color: #000;
   font-family: "Roboto Condensed", sans-serif; }
 
 h1 {
@@ -10831,17 +10831,31 @@ h3 {
         font-size: 31.5px; } }
 
 body {
-  color: #dedede;
+  color: #000;
   font-family: "Open Sans", sans-serif; }
 
 a:hover {
   text-decoration: none; }
 
+.underlined {
+  margin-bottom: 25px; }
+  .underlined:after {
+    margin-top: 15px;
+    content: '';
+    display: block;
+    height: 3px;
+    width: 33%;
+    background-color: #800000; }
+
+.rotate-45 {
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg); }
+
 /*------------------------------------------------*/
 /*--------------------[LINKS]---------------------*/
 /*------------------------------------------------*/
 .current_page_item a {
-  color: #79a0d7; }
+  color: #808080; }
 
 /*------------------------------------------------*/
 /*-------------------[BUTTONS]--------------------*/
@@ -10850,13 +10864,13 @@ a:hover {
   font-family: "Open Sans", sans-serif;
   text-transform: uppercase;
   color: #fff !important;
-  background-color: #005B90 !important;
-  border-color: #005B90 !important;
+  background-color: #800000 !important;
+  border-color: #800000 !important;
   border-radius: 5px; }
 
 .btn-primary:hover {
-  background-color: #007bc3 !important;
-  border-color: #005B90 !important; }
+  background-color: #4d0000 !important;
+  border-color: #800000 !important; }
 
 /*------------------------------------------------*/
 /*--------------------[HEADER]--------------------*/
@@ -10867,14 +10881,6 @@ a:hover {
   text-transform: uppercase;
   -webkit-transition: opacity 0.5s;
   transition: opacity 0.5s; }
-  #nav-buttons button:hover {
-    opacity: 0.8; }
-
-#nav-buttons a:nth-of-type(1) button {
-  background-color: #5B2E48; }
-
-#nav-buttons a:nth-of-type(2) button {
-  background-color: #425C16; }
 
 #headerLogo {
   color: #000;
@@ -10887,9 +10893,13 @@ a:hover {
       -ms-flex-pack: end;
           justify-content: flex-end; }
   #navbarNavDropdown .navbar-nav {
+    width: 100%;
     -webkit-box-align: center;
         -ms-flex-align: center;
-            align-items: center; }
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
     #navbarNavDropdown .navbar-nav .nav-link {
       border: solid 2px transparent;
       color: #000;
@@ -10906,46 +10916,99 @@ a:hover {
 /*-------------------[MENU]-----------------------*/
 /*------------------------------------------------*/
 .mobileToggle {
-  color: #005B90; }
+  color: #800000; }
 
 /*------------------------------------------------*/
 /*----------------------[PAGES]-------------------*/
 /*------------------------------------------------*/
-.home .wrapper {
-  padding-top: 0; }
-
-#homepageSlider img {
-  width: 100%;
-  height: 100vh; }
-
-#welcome {
-  background-color: #005B90;
-  padding-top: 50px;
-  padding-bottom: 50px; }
-  #welcome h3, #welcome h5 {
-    color: white; }
-  #welcome h3 {
-    margin-bottom: 25px; }
-    #welcome h3:after {
-      margin-top: 15px;
-      content: '';
-      display: block;
-      height: 3px;
-      width: 33%;
-      background-color: white; }
-  #welcome button {
-    background: #5b2e48;
-    border: solid 3px white;
+.page-header {
+  background: url("../img/page_header.jpg");
+  height: 350px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-box-shadow: #00000052 0 0 0 500px inset;
+          box-shadow: #00000052 0 0 0 500px inset; }
+  .page-header h1 {
     color: white;
-    -webkit-transition: all .5s;
-    transition: all .5s; }
-    #welcome button:hover {
-      background: rgba(91, 46, 72, 0.75); }
+    text-shadow: 2px 2px 4px #000000b0; }
 
-#homepage-blog {
-  padding-top: 50px;
-  padding-bottom: 50px; }
-  #homepage-blog .hp-single-post .post-wrapper {
+.home #wrapper-navbar {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.85); }
+
+.home #heroSliderWrapper {
+  position: relative; }
+  .home #heroSliderWrapper #heroSlider img {
+    width: 100%;
+    height: 60vh; }
+  .home #heroSliderWrapper #heroSlider .slick-slide {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+  .home #heroSliderWrapper #sliderContent {
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto; }
+    .home #heroSliderWrapper #sliderContent #sliderContentWrapper {
+      background: rgba(255, 255, 255, 0.6);
+      padding: 1rem 2rem; }
+
+.home #sectionTwo {
+  background-color: #800000; }
+  .home #sectionTwo #sectionTwoContentWrapper {
+    background: #fff;
+    -webkit-box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.5);
+            box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.5); }
+    .home #sectionTwo #sectionTwoContentWrapper h5 {
+      text-transform: uppercase;
+      font-weight: bold; }
+    .home #sectionTwo #sectionTwoContentWrapper h6 {
+      background: #800000;
+      color: #fff;
+      text-align: center;
+      padding: .5rem;
+      text-transform: uppercase; }
+    .home #sectionTwo #sectionTwoContentWrapper p {
+      text-align: center; }
+
+#latest_bulletin {
+  background: url(http://www.musictruth.com/wp-content/uploads/2016/11/sunset.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  padding: 50px;
+  position: relative; }
+  #latest_bulletin h1 {
+    text-align: center; }
+  #latest_bulletin:before {
+    display: block;
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ffffff8c; }
+  #latest_bulletin .dl_box {
+    border: solid 3px #005b90;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -10953,20 +11016,17 @@ a:hover {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    height: 100%;
-    padding: 50px;
-    border: solid 3px #425c16;
-    -webkit-box-shadow: 3px 5px 20px 2px rgba(0, 0, 0, 0.25);
-            box-shadow: 3px 5px 20px 2px rgba(0, 0, 0, 0.25);
-    border-radius: 5px; }
-    #homepage-blog .hp-single-post .post-wrapper i {
-      color: #5b2e48;
-      font-size: 35px; }
-    #homepage-blog .hp-single-post .post-wrapper h3 {
-      text-transform: uppercase; }
+    background: #ffffff85;
+    height: 200px; }
+
+#bulletin_archives h5 {
+  min-width: 175px; }
 
 /*------------------------------------------------*/
 /*--------------------[SIDEBAR]-------------------*/
@@ -11038,8 +11098,11 @@ a:hover {
 /*------------------------------------------------*/
 /*---------------------[FOOTER]-------------------*/
 /*------------------------------------------------*/
+footer {
+  background: #282828; }
+
 #wrapper-footer {
-  color: #79a0d7;
+  color: #808080;
   padding-top: 0;
   padding-bottom: 0;
   text-transform: uppercase;
@@ -11050,21 +11113,21 @@ a:hover {
     padding-bottom: 5px;
     border-bottom: solid 2px;
     text-transform: uppercase;
-    color: #005B90; }
+    color: #800000; }
   #wrapper-footer ul {
     padding-left: 0;
     list-style: none; }
     #wrapper-footer ul li {
       margin-bottom: 5px; }
       #wrapper-footer ul li a {
-        color: #005B90;
+        color: #800000;
         text-transform: uppercase;
         font-size: 12px; }
         #wrapper-footer ul li a:hover {
           text-decoration: none; }
 
 #bottomFooter {
-  background-color: #005B90;
+  background-color: #808080;
   color: #fff;
   padding-top: 25px;
   padding-bottom: 25px;

@@ -13,7 +13,7 @@ get_header();
 
 ?>
 
-<div class="wrapper" id="page-wrapper">
+<div id="page-wrapper">
 
 	<main class="site-main" id="main">
 

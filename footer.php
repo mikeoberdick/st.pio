@@ -13,60 +13,46 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 <div id="js-heightControl" style="height: 0;">&nbsp;</div>
 
-<?php if ( is_active_sidebar( 'footer_1') || is_active_sidebar( 'footer_2') || is_active_sidebar( 'footer_3') || is_active_sidebar( 'footer_4') ) { ?>
-
-<div class="wrapper" id="wrapper-footer">
-
-	<div class="<?php echo esc_html( $container ); ?>">
-
-	<div id = "footerWidgets" class = "row">
-
-		<div class = "col-lg-3 col-sm-12">
-			<?php dynamic_sidebar('footer_1'); ?>
-		</div>
-		
-		<div class = "col-lg-3 col-sm-12">
-			<?php dynamic_sidebar('footer_2'); ?>
-		</div>
-		
-		<div class = "col-lg-3 col-sm-12">
-			<?php dynamic_sidebar('footer_3'); ?>
-		</div>
-		
-		<div class = "col-lg-3 col-sm-12">
-			<?php dynamic_sidebar('footer_4'); ?>
-		</div>
-
-	</div><!-- #footerWidgets -->
-
-	</div><!-- .container -->
-
-	<?php } ?>
-
-	<div id = "bottomFooter" class = "container-fluid">
-
+<footer id="colophon" class = "pt-5">
+	<div class="container">
 		<div class="row">
+				<div id = "left" class="col-md-4">
+					<h5>LOGO</h5>
+					<p>Phone</p>
+					<p>Email</p>
+					<p>Addy</p>
+				</div><!-- .col-md-4 -->
+				<div id = "right" class="col-md-8">
+					<div id="buttons" class = "mb-3">
+						<a href = "/the-weekly-bulletin/ " class = "mr-3"><button role = 'button' class = 'btn btn-primary'><i class="fa fa-thumb-tack rotate-45 mr-1" aria-hidden="true"></i> WEEKLY BULLETIN</button></a>
+						<a target = "_blank" href = 'https://pompeiichurch.churchgiving.com/'><button role = 'button' class = 'btn btn-primary'><i class="fa fa-heart mr-1" aria-hidden="true"></i> GIVE</button></a>	
+					</div><!-- #buttons -->
+					<p class = "mb-3">lorem lorem lorem...</p>
+					<div id = "footerSocial">
+						<div class = "social-links mb-3">
+							<a target = "_blank" href="<?php the_field('facebook_url', 'options'); ?>" class="social-link">
+								<i class="fa fa-facebook" aria-hidden="true"></i>
+							</a>
+							<a target = "_blank" href="<?php the_field('twitter_url', 'options'); ?>" class="social-link">
+								<i class="fa fa-twitter" aria-hidden="true"></i>
+							</a>
+							<a target = "_blank" href="<?php the_field('youtube_url', 'options'); ?>" class="social-link">
+								<i class="fa fa-youtube" aria-hidden="true"></i>
+							</a>
+						</div><!-- .social-links -->
+					</div><!-- #footerSocial -->
+				</div><!-- .col-md-8 -->
+			</div><!-- .row -->
+			
+			<div id = "copyright" class="row text-center text-white pt-3 mx-3 mx-lg-0">
+				<div class="col-sm-12" id="attribution">
+					<p class = "mb-0">&copy <?php bloginfo( 'name' ); ?> All rights reserved</p>
+					<p>Site designed and devloped by <a target = "_blank" href = "https://designs4theweb.com" alt = "Designs 4 The Web - WordPress Website Developer">Designs 4 The Web</a></p>
+				</div><!-- #attribution.col-sm-12 -->
+			</div><!-- .row -->
 
-			<div class="col-md-12">
-
-				<footer class="site-footer text-center" id="colophon">
-
-					<div class="site-info">
-					
-					<span>&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?></span><br />
-					<span>Website by <a href = "http://www.designs4theweb.com">Designs 4 The Web</a></span>
-
-					</div><!-- .site-info -->
-
-				</footer><!-- #colophon -->
-
-			</div><!--col end -->
-
-		</div><!-- row end -->
-
-	</div><!-- .container-fluid -->
-
-</div><!-- wrapper end -->
+		</div><!-- .container -->
+	</footer><!-- #colophon -->
 
 </div><!-- #page-wrapper -->
 

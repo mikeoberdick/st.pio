@@ -16,8 +16,8 @@ html {
   @include fluid-type($min_width, $max_width, $min_font, $max_font);
 }
 
-h1, h2, h3, h4, h5 {
-	color: $brand-primary;
+h1, h2, h3, h4, h5, h6 {
+	color: #000;
 	font-family: $header-font;
 }
 
@@ -35,12 +35,32 @@ h3 {
 }
 
 body {
-	color: #dedede;
+	color: #000;
 	font-family: $body-font;
 }
 
 a:hover {
 	text-decoration: none;
+}
+
+.underlined {
+	margin-bottom: 25px;
+		&:after {
+			margin-top: 15px;
+		    content: '';
+		    display: block;
+		    height: 3px;
+		    width: 33%;
+		    background-color: $brand-primary;
+		}	
+}
+
+.rotate-45 {
+	-webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
 }
 
 /*------------------------------------------------*/
@@ -68,7 +88,7 @@ a:hover {
 			
 .btn-primary {
 	&:hover {
-		background-color: lighten( $brand-primary, 10% ) !important;
+		background-color: darken( $brand-primary, 10% ) !important;
 		border-color: $brand-primary !important;
    	}
   }
@@ -83,15 +103,6 @@ a:hover {
 	    text-align: center;
 	    text-transform: uppercase;
 		transition: opacity 0.5s;
-		&:hover {
-	    	opacity: 0.8; 
-	    }   
-	}
-	a:nth-of-type(1) {
-		button {background-color: #5B2E48;}
-	}
-	a:nth-of-type(2) {
-		button {background-color: #425C16;}
 	}
 }
 
@@ -104,10 +115,10 @@ a:hover {
 
 #navbarNavDropdown {
 	justify-content: flex-end;
-
 	.navbar-nav {
+		width: 100%;
 	    align-items: center;
-
+	    justify-content: center;
 	    .nav-link {
 	    	border: solid 2px transparent;
 	    	color: #000;
@@ -115,6 +126,7 @@ a:hover {
 	    } 
 	}
 }
+
 .dropdown-menu {
 	.menu-item {
 		font-size: 0.8rem;
@@ -137,78 +149,118 @@ a:hover {
 /*------------------------------------------------*/
 /*----------------------[PAGES]-------------------*/
 /*------------------------------------------------*/
+.page-header {
+	background: url('../img/page_header.jpg');
+	height: 350px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	box-shadow: #00000052 0 0 0 500px inset;
+	h1 {
+		color: white;
+    	text-shadow: 2px 2px 4px #000000b0;
+	}
+}
+
 
 //HOMEPAGE
-
 .home {
-	.wrapper {
-		padding-top: 0;
+	#wrapper-navbar {
+		position: absolute;
+	    top: 0;
+	    width: 100%;
+	    z-index: 1;
+	    background: rgba(256, 256, 256, .85);
 	}
-}
-
-#homepageSlider {
-	img {
-		width: 100%;
-		height: 100vh;
-	}
-}
-
-#welcome {
-	background-color: $brand-primary;
-	padding-top: 50px;
-	padding-bottom: 50px;
-
-	h3, h5 {
-		color: white;
-	}
-
-	h3 {
-		margin-bottom: 25px;
-		&:after {
-			margin-top: 15px;
-		    content: '';
-		    display: block;
-		    height: 3px;
-		    width: 33%;
-		    background-color: white;
-		}	
-	}
-
-	button {
-		background: rgba(91, 46, 72, 1);
-	    border: solid 3px white;
-	    color: white;
-		transition: all .5s;
-	    &:hover {
-	    	background: rgba(91, 46, 72, .75);
-	    }
-	}
-}
-
-#homepage-blog {
-	padding-top: 50px;
-    padding-bottom: 50px;
-
-    .hp-single-post {
-
-    	.post-wrapper {
-		    display: flex;
-		    flex-direction: column;
-		    align-items: center;
-		    height: 100%;
-		    padding: 50px;
-		    border: solid 3px #425c16;
-			box-shadow: 3px 5px 20px 2px rgba(0, 0, 0, 0.25);
-			border-radius: 5px;
-		    i {
-		    	color: #5b2e48;
-		    	font-size: 35px;
+	#heroSliderWrapper {
+		position: relative;
+		#heroSlider {
+			img {
+				width: 100%;
+				height: 60vh;
+			}
+			.slick-slide {
+				display: flex;
+			}
+		}
+		#sliderContent {
+			position: absolute;
+		    bottom: 50px;
+		    left: 0;
+		    right: 0;
+		    margin-left: auto;
+		    margin-right: auto;
+		    #sliderContentWrapper {
+		    	background: rgba(256, 256, 256, .6);
+			    padding: 1rem 2rem;
 		    }
-		    h3 {
-		    	text-transform: uppercase;
-		    }
-    	}
+		}
+	}
+	#sectionTwo {
+		background-color: $brand-primary;
+		#sectionTwoContentWrapper {
+			background: #fff;
+			box-shadow: 2px 4px 10px rgba(0,0,0,.5);
+			h5 {
+				text-transform: uppercase;
+				font-weight: bold;
+			}
+			h6 {
+				background: $brand-primary;
+				color: #fff;
+				text-align: center;
+				padding: .5rem;
+				text-transform: uppercase;
+			}
+			p {
+				text-align: center;
+			}
+		}
+	}
+}
+
+#latest_bulletin {
+	background: url(http://www.musictruth.com/wp-content/uploads/2016/11/sunset.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding: 50px;
+	position: relative;
+    h1 {
+    	text-align: center;
     }
+
+    &:before {
+	    display: block;
+	    content: '';
+	    width: 100%;
+	    height: 100%;
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    right: 0;
+	    bottom: 0;
+	    background-color: #ffffff8c;
+    }
+
+    .dl_box {
+	    border: solid 3px #005b90;
+	    display: flex;
+	    flex-direction: column;
+	    justify-content: center;
+	    align-items: center;
+	    background: #ffffff85;
+	    height: 200px;
+    }
+}
+
+#bulletin_archives {
+	h5 {
+		min-width: 175px;
+	}
 }
 
 /*------------------------------------------------*/
@@ -284,6 +336,11 @@ a:hover {
 /*---------------------[FOOTER]-------------------*/
 /*------------------------------------------------*/
 
+footer {
+	background: #282828;
+}
+
+
 #wrapper-footer {
 	color: $brand-secondary;
 	padding-top: 0;
@@ -323,7 +380,7 @@ a:hover {
 }
 
 #bottomFooter {
-	background-color: $brand-primary;
+	background-color: $brand-secondary;
 	color: #fff;
 	padding-top: 25px;
 	padding-bottom: 25px;

@@ -45,7 +45,7 @@ add_image_size( 'hp-slider', 1920, 600, array( 'center', 'center' ) );
 
 function d4tw_enqueue_styles () {
     wp_enqueue_style( 'Google Fonts', 'https://fonts.googleapis.com/css?family=Open+Sans|Pathway+Gothic+One|Roboto+Condensed' );
-    wp_enqueue_style( 'Slick CSS', '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css' );
+    wp_enqueue_style( 'Slick CSS', get_stylesheet_directory_uri() . '/slick/slick.css' );
     wp_enqueue_style( 'Slick Theme CSS', get_stylesheet_directory_uri() . '/slick/slick-theme.css' );
 }
 add_action('wp_enqueue_scripts', 'd4tw_enqueue_styles');
@@ -58,7 +58,7 @@ add_action('wp_enqueue_scripts', 'd4tw_enqueue_styles');
 
 function d4tw_enqueue_scripts () {
    wp_enqueue_script( 'D4TW Theme JS', get_stylesheet_directory_uri() . '/js/d4tw.js', array('jquery'), '1.0.0', true );
-   wp_enqueue_script( 'Slick JS', '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', array('jquery'), '1.0.0', true );
+   wp_enqueue_script( 'Slick JS', get_stylesheet_directory_uri() . '/slick/slick.min.js', array('jquery'), '1.0.0', true );
 }
 add_action( 'wp_enqueue_scripts', 'd4tw_enqueue_scripts' );
 
@@ -72,9 +72,9 @@ add_action( 'wp_enqueue_scripts', 'd4tw_enqueue_scripts' );
 if( function_exists('acf_add_options_page') ) {
 
 	acf_add_options_page(array(
-		'page_title' 	=> 'Company Profile',
-		'menu_title'	=> 'Company Profile',
-		'menu_slug' 	=> 'company-profile'
+		'page_title' 	=> 'Church Profile',
+		'menu_title'	=> 'Church Profile',
+		'menu_slug' 	=> 'church-profile'
 	));
     
 }
@@ -264,7 +264,7 @@ add_action( 'widgets_init', 'd4tw_sidebars' );
 
 // *** CUSTOM POST TYPES *** \\
 
-//Products custom post type
+//Homily custom post type
 add_action( 'init', 'homily_post_type', 0 );
 function homily_post_type() {
 // Set UI labels for Custom Post Type
@@ -307,4 +307,90 @@ function homily_post_type() {
   
   // Registering your Custom Post Type
   register_post_type( 'Homilies', $args );
+}
+
+//Bulletin custom post type
+add_action( 'init', 'weekly_bulletin_post_type', 0 );
+function weekly_bulletin_post_type() {
+// Set UI labels for Custom Post Type
+  $labels = array(
+    'name'                => 'Weekly Bulletins',
+    'singular_name'       => 'Weekly Bulletin',
+    'menu_name'           => 'Weekly Bulletins',
+    'parent_item_colon'   => 'Parent Weekly Bulletin',
+    'all_items'           => 'All Weekly Bulletins',
+    'view_item'           => 'View Weekly Bulletin',
+    'add_new_item'        => 'Add New Weekly Bulletin',
+    'add_new'             => 'Add New',
+    'edit_item'           => 'Edit Weekly Bulletin',
+    'update_item'         => 'Update Weekly Bulletin',
+    'search_items'        => 'Search Weekly Bulletins',
+    'not_found'           => 'No Weekly Bulletin Found',
+    'not_found_in_trash'  => 'No Weekly Bulletin Found in Trash',
+  );
+  
+// Set other options for Custom Post Type
+  $args = array(
+    'label'               => 'Weekly Bulletin',
+    'description'         => 'Weekly Bulletin',
+    'labels'              => $labels,
+    // Features this CPT supports in Post Editor
+    'supports'            => array( 'title', 'editor', 'thumbnail' ),
+    'hierarchical'        => false,
+    'public'              => true,
+    'show_ui'             => true,
+    'show_in_menu'        => true,
+    'show_in_nav_menus'   => true,
+    'show_in_admin_bar'   => true,
+    'menu_position'       => 5,
+    'can_export'          => true,
+    'has_archive'         => true,
+    'exclude_from_search' => false,
+    'publicly_queryable'  => true,
+    'capability_type'     => 'page',
+  );
+  
+  // Registering your Custom Post Type
+  register_post_type( 'weekly-bulletin', $args );
+  // Adding date archives support to the bulletin custom post type.
+    add_post_type_support( 'weekly-bulletin', array( 'date-archives' ) );
+}
+
+function myprefix_query_offset(&$query) {
+
+    //First, define your desired offset...
+    $offset = 1;
+    
+    //Next, determine how many posts per page you want (we'll use WordPress's settings)
+    $ppp = 20;
+
+    //Next, detect and handle pagination...
+    if ( $query->is_paged ) {
+
+        //Manually determine page query offset (offset + current page (minus one) x posts per page)
+        $page_offset = $offset + ( ($query->query_vars['paged']-1) * $ppp );
+
+        //Apply adjust page offset
+        $query->set('offset', $page_offset );
+
+    }
+    else {
+
+        //This is the first page. Just use the offset...
+        $query->set('offset',$offset);
+
+    }
+}
+
+function myprefix_adjust_offset_pagination($found_posts, $query) {
+
+    //Define the offset
+    $offset = 1;
+
+    //Ensure we're modifying the right query object...
+
+        //Reduce WordPress's found_posts count by the offset... 
+        return $found_posts - $offset;
+
+    return $found_posts;
 }
