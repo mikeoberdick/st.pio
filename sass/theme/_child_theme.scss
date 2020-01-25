@@ -63,6 +63,13 @@ a:hover {
     transform: rotate(45deg);
 }
 
+.logo {
+	color: #000;
+	font-family: 'Pathway Gothic One', sans-serif;
+	text-transform: uppercase;
+	letter-spacing: 1pt;
+}
+
 /*------------------------------------------------*/
 /*--------------------[LINKS]---------------------*/
 /*------------------------------------------------*/
@@ -89,7 +96,7 @@ a:hover {
 .btn-primary {
 	&:hover {
 		background-color: darken( $brand-primary, 10% ) !important;
-		border-color: $brand-primary !important;
+		border-color: #fff !important;
    	}
   }
 
@@ -104,13 +111,6 @@ a:hover {
 	    text-transform: uppercase;
 		transition: opacity 0.5s;
 	}
-}
-
-#headerLogo {
-	color: #000;
-	font-family: 'Pathway Gothic One', sans-serif;
-	text-transform: uppercase;
-	letter-spacing: 1pt;
 }
 
 #navbarNavDropdown {
@@ -338,63 +338,37 @@ a:hover {
 
 footer {
 	background: #282828;
-}
-
-
-#wrapper-footer {
-	color: $brand-secondary;
-	padding-top: 0;
-	padding-bottom: 0;
-	text-transform: uppercase;
-	font-size: 12px;
-
-	#footerWidgets {
-		padding: 50px 0;
-	}
-
-	h5 {
-			padding-bottom: 5px;
-		    border-bottom: solid 2px;
-		    text-transform: uppercase;
-		    color: $brand-primary
-		}
-
-	ul {
-		padding-left: 0;
-		list-style: none;
-
-		li {
-			margin-bottom: 5px;
-
-			a {
-				color: $brand-primary;
-				text-transform: uppercase;
-				font-size: 12px;
-
-				&:hover {
-					text-decoration: none;
-				}
-			}
-		}
-	}
-}
-
-#bottomFooter {
-	background-color: $brand-secondary;
 	color: #fff;
-	padding-top: 25px;
-	padding-bottom: 25px;
-	box-shadow: inset 0 20px 30px -15px rgba(0, 0, 0, 0.50);
-	-webkit-box-shadow: inset 0 20px 30px -15px rgba(0, 0, 0, 0.50);
-
+	.logo {
+		color: #fff;
+	}
+	#footerSocial {
+		i {
+			border: solid 2px white;
+		    padding: 20px;
+		    border-radius: 50%;
+		    height: 25px;
+		    width: 25px;
+		    display: inline-flex;
+		    justify-content: center;
+		    align-items: center;
+		    margin-right: .5rem;
+		    &:hover {
+		    	color: #fff;
+		    }
+		}
+		a:last-of-type {
+			i {
+				margin-right: 0;
+			}
+		}	
+	}
 	a {
 		color: #fff;
-
-		&:hover {
-			text-decoration: none;
-		}
 	}
 }
+
+
 
 /*------------------------------------------------*/
 /*--------------[RESPONSIVE/UTILITIES]------------*/

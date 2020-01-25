@@ -10851,6 +10851,12 @@ a:hover {
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg); }
 
+.logo {
+  color: #000;
+  font-family: 'Pathway Gothic One', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1pt; }
+
 /*------------------------------------------------*/
 /*--------------------[LINKS]---------------------*/
 /*------------------------------------------------*/
@@ -10870,7 +10876,7 @@ a:hover {
 
 .btn-primary:hover {
   background-color: #4d0000 !important;
-  border-color: #800000 !important; }
+  border-color: #fff !important; }
 
 /*------------------------------------------------*/
 /*--------------------[HEADER]--------------------*/
@@ -10881,12 +10887,6 @@ a:hover {
   text-transform: uppercase;
   -webkit-transition: opacity 0.5s;
   transition: opacity 0.5s; }
-
-#headerLogo {
-  color: #000;
-  font-family: 'Pathway Gothic One', sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 1pt; }
 
 #navbarNavDropdown {
   -webkit-box-pack: end;
@@ -11099,44 +11099,32 @@ a:hover {
 /*---------------------[FOOTER]-------------------*/
 /*------------------------------------------------*/
 footer {
-  background: #282828; }
-
-#wrapper-footer {
-  color: #808080;
-  padding-top: 0;
-  padding-bottom: 0;
-  text-transform: uppercase;
-  font-size: 12px; }
-  #wrapper-footer #footerWidgets {
-    padding: 50px 0; }
-  #wrapper-footer h5 {
-    padding-bottom: 5px;
-    border-bottom: solid 2px;
-    text-transform: uppercase;
-    color: #800000; }
-  #wrapper-footer ul {
-    padding-left: 0;
-    list-style: none; }
-    #wrapper-footer ul li {
-      margin-bottom: 5px; }
-      #wrapper-footer ul li a {
-        color: #800000;
-        text-transform: uppercase;
-        font-size: 12px; }
-        #wrapper-footer ul li a:hover {
-          text-decoration: none; }
-
-#bottomFooter {
-  background-color: #808080;
-  color: #fff;
-  padding-top: 25px;
-  padding-bottom: 25px;
-  box-shadow: inset 0 20px 30px -15px rgba(0, 0, 0, 0.5);
-  -webkit-box-shadow: inset 0 20px 30px -15px rgba(0, 0, 0, 0.5); }
-  #bottomFooter a {
+  background: #282828;
+  color: #fff; }
+  footer .logo {
     color: #fff; }
-    #bottomFooter a:hover {
-      text-decoration: none; }
+  footer #footerSocial i {
+    border: solid 2px white;
+    padding: 20px;
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-right: .5rem; }
+    footer #footerSocial i:hover {
+      color: #fff; }
+  footer #footerSocial a:last-of-type i {
+    margin-right: 0; }
+  footer a {
+    color: #fff; }
 
 /*------------------------------------------------*/
 /*--------------[RESPONSIVE/UTILITIES]------------*/

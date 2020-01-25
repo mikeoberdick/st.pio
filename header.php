@@ -52,7 +52,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 				</button>
 					
 				<a rel = "home" class="navbar-brand" data-itemprop="url" title="<?php echo esc_attr( get_bloginfo( 'name') ); ?>" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-					<h3 id = "headerLogo" alt = "<?php echo esc_attr( get_bloginfo( 'name') ); ?>"><?php echo esc_attr( get_bloginfo( 'name') ); ?></h3>
+					<h3 class = "logo" alt = "<?php echo esc_attr( get_bloginfo( 'name') ); ?>"><?php echo esc_attr( get_bloginfo( 'name') ); ?></h3>
 				</a>
 
 				<!-- The WordPress Menu goes here -->

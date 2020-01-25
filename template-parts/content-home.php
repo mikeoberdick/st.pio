@@ -50,41 +50,38 @@ if( $images ): ?>
 				<div class="col-sm-12">
 					<h5 class = "mb-3">St. Pio Mass Times</h5>
 				</div><!-- .col-sm-12 -->
-					<div class="col-md-3">
-						<h6>Sunday</h6>
-						<p>times</p>
-					</div><!-- .col-md-3 -->
-					<div class="col-md-3">
-						<h6>Monday-Thursday</h6>
-						<p>times</p>
-					</div><!-- .col-md-3 -->
-					<div class="col-md-3">
-						<h6>First Fridays</h6>
-						<p>times</p>
-					</div><!-- .col-md-3 -->
-					<div class="col-md-3">
-						<h6>Saturday</h6>
-						<p>times</p>
-					</div><!-- .col-md-3 -->
+				<?php
+				if( have_rows('st_pio_hours', 'option') ):
+					while( have_rows('st_pio_hours', 'option') ): the_row(); 
+						// vars
+							$day = get_sub_field('days');
+							$times = get_sub_field('hours');
+						?>
+
+						<div class="col-md-3">
+							<h6><?php echo $day; ?></h6>
+							<p><?php echo $times; ?></p>
+						</div><!-- .col-md-3 -->
+					<?php endwhile; ?>
+				<?php endif; ?>
+
 				<div class="col-sm-12">
 					<h5 class = "my-3">St. Vincent De Paul Mass Times</h5>
 				</div><!-- .col-sm-12 -->
-					<div class="col-md-3">
-						<h6>Sunday</h6>
-						<p>times</p>
-					</div><!-- .col-md-3 -->
-					<div class="col-md-3">
-						<h6>Monday-Thursday</h6>
-						<p>times</p>
-					</div><!-- .col-md-3 -->
-					<div class="col-md-3">
-						<h6>First Fridays</h6>
-						<p>times</p>
-					</div><!-- .col-md-3 -->
-					<div class="col-md-3">
-						<h6>Saturday</h6>
-						<p>times</p>
-					</div><!-- .col-md-3 -->
+					<?php
+				if( have_rows('st_vincent_hours', 'option') ):
+					while( have_rows('st_vincent_hours', 'option') ): the_row(); 
+						// vars
+							$day = get_sub_field('days');
+							$times = get_sub_field('hours');
+						?>
+
+						<div class="col-md-3">
+							<h6><?php echo $day; ?></h6>
+							<p><?php echo $times; ?></p>
+						</div><!-- .col-md-3 -->
+					<?php endwhile; ?>
+				<?php endif; ?>
 			</div><!-- .row -->	
 		</div><!-- #sectionTwoContentWrapper -->
 	</div><!-- .container -->

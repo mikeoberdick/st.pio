@@ -72,8 +72,8 @@ add_action( 'wp_enqueue_scripts', 'd4tw_enqueue_scripts' );
 if( function_exists('acf_add_options_page') ) {
 
 	acf_add_options_page(array(
-		'page_title' 	=> 'Church Profile',
-		'menu_title'	=> 'Church Profile',
+		'page_title' 	=> 'Church Information',
+		'menu_title'	=> 'Church Info',
 		'menu_slug' 	=> 'church-profile'
 	));
     
