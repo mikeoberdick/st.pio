@@ -20,5 +20,11 @@ $(document).ready(function() {
 	});
 });
 
+/////////////////  FIXED NAV PAGE CONTENT PADDING  \\\\\\\\\\\\\\\\\
+$(document).ready(function() {
+var navHeight = $('#wrapper-navbar').outerHeight();
+$('.entry-title').css('margin-top', navHeight);
+});
+
 //end of file
 });
