@@ -1,5 +1,3 @@
-<?php ?>
-
 <?php 
 $images = get_field('slider_images');
 if( $images ): ?>
@@ -34,7 +32,7 @@ if( $images ): ?>
 					<img src = "http://via.placeholder.com/750x500?text=Parish%20Image">
 				</div><!-- .col-md-6 -->
 				<div class="col-md-6">
-					<h3 class = "underlined">Welcome to St. Pio of Pietrelcina</h3>
+					<h3>Welcome to St. Pio of Pietrelcina</h3>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, cupiditate maxime? Incidunt reiciendis aut ullam ea harum hic perspiciatis suscipit, error expedita voluptate deserunt ipsum! Iusto quam, enim fuga maxime?</p>
 					<a href = '<?php echo bloginfo('url'); ?>/our-parish'><button role = 'button' class = 'btn btn-primary'>Learn More</button></a>
 				</div><!-- .col-md-6 -->

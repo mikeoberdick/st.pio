@@ -13,28 +13,24 @@ get_header();
 
 ?>
 
-<div id="page-wrapper">
-
+<div id="page-wrapper" <?php if (!is_page('home')) {echo 'class = "pb-5"';} ?>>
 	<main class="site-main" id="main">
-
 		<?php while ( have_posts() ) : the_post(); ?>
-
 			<?php
-
 			if( is_page( 'home' ) ) {
 					get_template_part( 'template-parts/content', 'home' );
-			}
-
-			else {
+			} else if ( is_page( 'our-parish' ) ) {
+				get_template_part( 'template-parts/content', 'about' );
+			} else if ( is_page( 'religious-education' ) ) {
+				get_template_part( 'template-parts/content', 'religious-education' );
+			} else if ( is_page( 'contact-us' ) ) {
+				get_template_part( 'template-parts/content', 'contact' );
+			} else {
 			   get_template_part( 'loop-templates/content', 'page' );
 			}
-
 			?>
-
 		<?php endwhile; // end of the loop. ?>
-
 	</main><!-- #main -->
-
 </div><!-- #page-wrapper -->
 
 <?php get_footer(); ?>

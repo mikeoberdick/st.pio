@@ -10837,9 +10837,10 @@ body {
 a:hover {
   text-decoration: none; }
 
-.underlined {
-  margin-bottom: 25px; }
-  .underlined:after {
+h3 {
+  margin-bottom: 25px;
+  display: inline-block; }
+  h3:after {
     margin-top: 15px;
     content: '';
     display: block;
@@ -10855,7 +10856,10 @@ a:hover {
   color: #000;
   font-family: 'Pathway Gothic One', sans-serif;
   text-transform: uppercase;
-  letter-spacing: 1pt; }
+  letter-spacing: 1pt;
+  margin-bottom: 0; }
+  .logo:after {
+    display: none; }
 
 /*------------------------------------------------*/
 /*--------------------[LINKS]---------------------*/
@@ -10905,12 +10909,13 @@ a:hover {
       color: #000;
       font-family: 'Roboto Condensed', sans-serif; }
 
-.dropdown-menu .menu-item {
-  font-size: 0.8rem; }
-
 #wrapper-navbar {
-  padding-top: 10px;
-  padding-bottom: 10px; }
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 10px auto; }
 
 /*------------------------------------------------*/
 /*-------------------[MENU]-----------------------*/
@@ -10937,17 +10942,11 @@ a:hover {
   background-position: center;
   background-repeat: no-repeat;
   -webkit-box-shadow: #00000052 0 0 0 500px inset;
-          box-shadow: #00000052 0 0 0 500px inset; }
+          box-shadow: #00000052 0 0 0 500px inset;
+  margin-bottom: 3rem; }
   .page-header h1 {
     color: white;
     text-shadow: 2px 2px 4px #000000b0; }
-
-.home #wrapper-navbar {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  z-index: 1;
-  background: rgba(255, 255, 255, 0.85); }
 
 .home #heroSliderWrapper {
   position: relative; }
@@ -10986,6 +10985,35 @@ a:hover {
       text-transform: uppercase; }
     .home #sectionTwo #sectionTwoContentWrapper p {
       text-align: center; }
+
+.page-id-54 .class-info-wrapper .class-header {
+  background: #800000;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  border: solid 1px #800000;
+  border-bottom: 0; }
+
+.page-id-54 .class-info-wrapper .class-content {
+  border: solid 1px #d0d0d0;
+  border-top: 0;
+  padding: 10px; }
+
+.page-id-54 .class-contact i {
+  color: #800000; }
+
+.page-id-54 #sectionThree .class-info {
+  padding-bottom: 25px;
+  border-bottom: solid 1px #d0d0d0;
+  margin-bottom: 25px; }
+  .page-id-54 #sectionThree .class-info h5 {
+    color: #800000; }
+  .page-id-54 #sectionThree .class-info:last-of-type {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    border-bottom: 0; }
+  .page-id-54 #sectionThree .class-info p:last-of-type {
+    margin-bottom: 0; }
 
 #latest_bulletin {
   background: url(http://www.musictruth.com/wp-content/uploads/2016/11/sunset.jpg);

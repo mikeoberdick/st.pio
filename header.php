@@ -75,8 +75,8 @@ $container = get_theme_mod( 'understrap_container_type' );
 		</nav><!-- .site-navigation -->
 	</div><!-- .wrapper-navbar end -->
 
-	<?php //if(!is_page('homepage')) { ?>
-		<!-- <header class="page-header container-fluid"> -->
-			<?php //the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-		<!-- </header>-->
-	<?php //} ?>
+	<?php if(!is_page('home')) { ?>
+		<header class="page-header container-fluid">
+			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+		</header>
+	<?php } ?>

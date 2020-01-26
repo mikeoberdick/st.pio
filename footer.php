@@ -17,7 +17,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 	<div class="container">
 		<div class="row">
 				<div id = "left" class="col-md-4">
-					<h3 class = "logo" alt = "<?php echo esc_attr( get_bloginfo( 'name') ); ?>">St. Pio of Pietrelcina Parish</h3>
+					<h3 class = "logo mb-3" alt = "<?php echo esc_attr( get_bloginfo( 'name') ); ?>">St. Pio of Pietrelcina Parish</h3>
 					<p><i class="fa fa-phone mr-2" aria-hidden="true"></i><?php the_field('st_pio_phone', 'option'); ?></p>
 					<p><i class="fa fa-envelope mr-2" aria-hidden="true"></i><?php the_field('email', 'option'); ?></p>
 					<p><i class="fa fa-map-marker mr-2" aria-hidden="true"></i><?php echo get_field('st_pio_address_line_1', 'option') . ' ' . get_field('st_pio_address_line_2', 'option'); ?></p>

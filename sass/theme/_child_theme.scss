@@ -43,8 +43,9 @@ a:hover {
 	text-decoration: none;
 }
 
-.underlined {
+h3 {
 	margin-bottom: 25px;
+	display: inline-block;
 		&:after {
 			margin-top: 15px;
 		    content: '';
@@ -68,6 +69,10 @@ a:hover {
 	font-family: 'Pathway Gothic One', sans-serif;
 	text-transform: uppercase;
 	letter-spacing: 1pt;
+	margin-bottom: 0;
+	&:after {
+		display: none;
+	}
 }
 
 /*------------------------------------------------*/
@@ -127,15 +132,13 @@ a:hover {
 	}
 }
 
-.dropdown-menu {
-	.menu-item {
-		font-size: 0.8rem;
-	}
-}
-
 #wrapper-navbar {
-	padding-top: 10px;
-	padding-bottom: 10px;
+	position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    background: rgba(256, 256, 256, .85);
+    padding: 10px auto;
 }
 
 /*------------------------------------------------*/
@@ -159,6 +162,7 @@ a:hover {
 	background-position: center;
 	background-repeat: no-repeat;
 	box-shadow: #00000052 0 0 0 500px inset;
+	margin-bottom: 3rem;
 	h1 {
 		color: white;
     	text-shadow: 2px 2px 4px #000000b0;
@@ -168,13 +172,6 @@ a:hover {
 
 //HOMEPAGE
 .home {
-	#wrapper-navbar {
-		position: absolute;
-	    top: 0;
-	    width: 100%;
-	    z-index: 1;
-	    background: rgba(256, 256, 256, .85);
-	}
 	#heroSliderWrapper {
 		position: relative;
 		#heroSlider {
@@ -217,6 +214,50 @@ a:hover {
 			}
 			p {
 				text-align: center;
+			}
+		}
+	}
+}
+
+//Religious Education
+.page-id-54 {
+	.class-info-wrapper {
+		.class-header {
+			background: $brand-primary;
+		    color: white;
+		    padding: 10px;
+		    text-align: center;
+		    border: solid 1px $brand-primary;
+		    border-bottom: 0;
+		}
+		.class-content {
+			border: solid 1px #d0d0d0;
+			border-top: 0;
+			padding: 10px;
+		}
+	}
+	.class-contact {
+		i {
+			color: $brand-primary;
+		}
+	}
+	#sectionThree {
+		.class-info {
+			padding-bottom: 25px;
+			border-bottom: solid 1px #d0d0d0;
+			margin-bottom: 25px;
+			h5 {
+				color: $brand-primary;
+			}
+			&:last-of-type {
+				padding-bottom: 0;
+				margin-bottom: 0;
+				border-bottom: 0;
+			}
+			p {
+				&:last-of-type {
+					margin-bottom: 0;
+				}
 			}
 		}
 	}
