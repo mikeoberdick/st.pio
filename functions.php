@@ -1,4 +1,3 @@
-
 <?php
 
 // *** Theme Setup *** \\
@@ -17,11 +16,11 @@ add_action( 'wp_enqueue_scripts', 'understrap_remove_scripts', 20 );
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
 function theme_enqueue_styles() {
 
-	// Get the theme data
-	$the_theme = wp_get_theme();
+    // Get the theme data
+    $the_theme = wp_get_theme();
     wp_enqueue_style( 'child-understrap-styles', get_stylesheet_directory_uri() . '/css/child-theme.min.css', array(), $the_theme->get( 'Version' ) );
     wp_enqueue_script( 'jquery');
-	wp_enqueue_script( 'popper-scripts', get_template_directory_uri() . '/js/popper.min.js', array(), false);
+    wp_enqueue_script( 'popper-scripts', get_template_directory_uri() . '/js/popper.min.js', array(), false);
     wp_enqueue_script( 'child-understrap-scripts', get_stylesheet_directory_uri() . '/js/child-theme.min.js', array(), $the_theme->get( 'Version' ), true );
     if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
         wp_enqueue_script( 'comment-reply' );
@@ -71,27 +70,27 @@ add_action( 'wp_enqueue_scripts', 'd4tw_enqueue_scripts' );
 //Add the ACF options page
 if( function_exists('acf_add_options_page') ) {
 
-	acf_add_options_page(array(
-		'page_title' 	=> 'Church Information',
-		'menu_title'	=> 'Church Info',
-		'menu_slug' 	=> 'church-profile'
-	));
+    acf_add_options_page(array(
+        'page_title'    => 'Church Information',
+        'menu_title'    => 'Church Info',
+        'menu_slug'     => 'church-profile'
+    ));
     
 }
 
 //Register the Google Maps API for use with ACF
 function google_maps_scripts () {
-	if (is_page('contact')) {
-	   		wp_enqueue_script( 'google-map', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyB_LlgIpFpelPIbA25yjUi_dhCywFKKYco', array(), '3', true );
-			wp_enqueue_script( 'google-map-init', get_stylesheet_directory_uri() . '/js/google-maps.js', array('google-map', 'jquery'), '0.1', true );
-		}
-	}
-	
+    if (is_page('contact')) {
+            wp_enqueue_script( 'google-map', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyB_LlgIpFpelPIbA25yjUi_dhCywFKKYco', array(), '3', true );
+            wp_enqueue_script( 'google-map-init', get_stylesheet_directory_uri() . '/js/google-maps.js', array('google-map', 'jquery'), '0.1', true );
+        }
+    }
+    
 add_action( 'wp_enqueue_scripts', 'google_maps_scripts' );
 
 function my_acf_google_map_api( $api ){
-	$api['key'] = 'AIzaSyB_LlgIpFpelPIbA25yjUi_dhCywFKKYco';
-	return $api;	
+    $api['key'] = 'AIzaSyB_LlgIpFpelPIbA25yjUi_dhCywFKKYco';
+    return $api;    
 }
 
 add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
@@ -103,7 +102,7 @@ add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
 // *** D4TW Custom Dashboard *** \\
 
 function d4tw_add_dashboard_widget() {
-	add_meta_box('wp_dashboard_widget_1', 'Theme Details', 'd4tw_theme_info', 'dashboard', 'side', 'high');
+    add_meta_box('wp_dashboard_widget_1', 'Theme Details', 'd4tw_theme_info', 'dashboard', 'side', 'high');
   //wp_add_dashboard_widget('wp_dashboard_widget', 'Theme Details', 'd4tw_theme_info');
 }
 add_action('wp_dashboard_setup', 'd4tw_add_dashboard_widget' );
@@ -120,7 +119,7 @@ function d4tw_theme_info() {
 function d4tw_remove_menus(){
 if ( current_user_can( 'editor' ) ) {
 remove_menu_page( 'tools.php' );
-	}
+    }
 }
 add_action( 'admin_menu', 'd4tw_remove_menus' );
 
@@ -158,29 +157,10 @@ add_filter('login_headerurl', 'd4tw_login_url');
 
 //Replace the WordPress dashboard logo
 function d4tw_admin_css() {
-	wp_enqueue_style('dashboard-styles', get_stylesheet_directory_uri() . '/dashboard/dashboard.css');
+    wp_enqueue_style('dashboard-styles', get_stylesheet_directory_uri() . '/dashboard/dashboard.css');
 }
 
 add_action('admin_head', 'd4tw_admin_css');
-
-
-
-
-
-// *** Custom Menus *** \\
-
-
-
-
-
-
-// *** Template Tags *** \\
-
-
-
-
-
-// *** User Tweaks & Permissions *** \\
 
 // Hide the admin toolbar for non-admins
 add_action('admin_init', 'd4tw_disable_admin_bar');
@@ -199,10 +179,10 @@ function d4tw_disable_admin_bar() {
 
 // Deregister Sidebars
 function d4tw_remove_sidebars () {
-	unregister_sidebar( 'statichero' );
-	unregister_sidebar( 'hero' );
-	unregister_sidebar( 'footerfull' );
-	unregister_sidebar( 'left-sidebar' );
+    unregister_sidebar( 'statichero' );
+    unregister_sidebar( 'hero' );
+    unregister_sidebar( 'footerfull' );
+    unregister_sidebar( 'left-sidebar' );
 
 }
 
@@ -262,55 +242,9 @@ function d4tw_sidebars() {
 }
 add_action( 'widgets_init', 'd4tw_sidebars' );
 
-// *** CUSTOM POST TYPES *** \\
-
-//Homily custom post type
-add_action( 'init', 'homily_post_type', 0 );
-function homily_post_type() {
-// Set UI labels for Custom Post Type
-  $labels = array(
-    'name'                => 'Homilies',
-    'singular_name'       => 'Homily',
-    'menu_name'           => 'Homilies',
-    'parent_item_colon'   => 'Parent Homily',
-    'all_items'           => 'All Homilies',
-    'view_item'           => 'View Homily',
-    'add_new_item'        => 'Add New Homily',
-    'add_new'             => 'Add New',
-    'edit_item'           => 'Edit Homily',
-    'update_item'         => 'Update Homily',
-    'search_items'        => 'Search Homilies',
-    'not_found'           => 'No Homily Found',
-    'not_found_in_trash'  => 'No Homily Found in Trash',
-  );
-  
-// Set other options for Custom Post Type
-  $args = array(
-    'label'               => 'Homily',
-    'description'         => 'Homily',
-    'labels'              => $labels,
-    // Features this CPT supports in Post Editor
-    'supports'            => array( 'title', 'editor', 'page-attributes', 'thumbnail' ),
-    'hierarchical'        => false,
-    'public'              => true,
-    'show_ui'             => true,
-    'show_in_menu'        => true,
-    'show_in_nav_menus'   => true,
-    'show_in_admin_bar'   => true,
-    'menu_position'       => 5,
-    'can_export'          => true,
-    'has_archive'         => true,
-    'exclude_from_search' => false,
-    'publicly_queryable'  => true,
-    'capability_type'     => 'page',
-  );
-  
-  // Registering your Custom Post Type
-  register_post_type( 'Homilies', $args );
-}
-
 //Bulletin custom post type
 add_action( 'init', 'weekly_bulletin_post_type', 0 );
+
 function weekly_bulletin_post_type() {
 // Set UI labels for Custom Post Type
   $labels = array(
@@ -352,45 +286,4 @@ function weekly_bulletin_post_type() {
   
   // Registering your Custom Post Type
   register_post_type( 'weekly-bulletin', $args );
-  // Adding date archives support to the bulletin custom post type.
-    add_post_type_support( 'weekly-bulletin', array( 'date-archives' ) );
-}
-
-function myprefix_query_offset(&$query) {
-
-    //First, define your desired offset...
-    $offset = 1;
-    
-    //Next, determine how many posts per page you want (we'll use WordPress's settings)
-    $ppp = 20;
-
-    //Next, detect and handle pagination...
-    if ( $query->is_paged ) {
-
-        //Manually determine page query offset (offset + current page (minus one) x posts per page)
-        $page_offset = $offset + ( ($query->query_vars['paged']-1) * $ppp );
-
-        //Apply adjust page offset
-        $query->set('offset', $page_offset );
-
-    }
-    else {
-
-        //This is the first page. Just use the offset...
-        $query->set('offset',$offset);
-
-    }
-}
-
-function myprefix_adjust_offset_pagination($found_posts, $query) {
-
-    //Define the offset
-    $offset = 1;
-
-    //Ensure we're modifying the right query object...
-
-        //Reduce WordPress's found_posts count by the offset... 
-        return $found_posts - $offset;
-
-    return $found_posts;
 }
